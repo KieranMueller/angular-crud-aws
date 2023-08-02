@@ -1,0 +1,70 @@
+<div class="container1">
+  <div class="card1">
+    <img
+      class="close-icon"
+      src="../../../assets/images/x-icon3.png"
+      alt="close modal"
+      (click)="emitClose()"
+    />
+    <form>
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          name="firstName"
+          [placeholder]="user.firstName"
+          [(ngModel)]="newUser.firstName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          name="lastName"
+          [placeholder]="user.lastName"
+          [(ngModel)]="newUser.lastName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          [placeholder]="user.username"
+          [(ngModel)]="newUser.username"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input
+          type="number"
+          class="form-control"
+          id="age"
+          name="age"
+          [placeholder]="user.age"
+          [(ngModel)]="newUser.age"
+        />
+      </div>
+      <p>(blank fields will not be changed)</p>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="updateUser()"
+        [disabled]="
+          newUser.firstName === '' &&
+          newUser.lastName === '' &&
+          newUser.username === '' &&
+          newUser.age === undefined
+        "
+      >
+        Save
+      </button>
+    </form>
+  </div>
+</div>

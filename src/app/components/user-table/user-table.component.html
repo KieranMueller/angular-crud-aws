@@ -1,0 +1,43 @@
+<app-update-user-overlay
+  *ngIf="showModal"
+  [user]="user"
+  (modalEmitter)="toggleModal()"
+></app-update-user-overlay>
+<div class="container">
+  <div class="container1">
+    <table class="table table-dark table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Username</th>
+          <th scope="col">Age</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="row1"
+          *ngFor="let user of users.slice().reverse(); let i = index"
+          (click)="editUser(user.id)"
+        >
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.age }}</td>
+          <td>
+            <img
+              (click)="$event.stopPropagation()"
+              (click)="deleteUser(user.id)"
+              class="trash-icon"
+              src="../../../assets/images/trash-icon.svg"
+              alt="delete icon"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

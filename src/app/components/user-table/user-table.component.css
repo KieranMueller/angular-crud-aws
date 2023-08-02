@@ -1,0 +1,21 @@
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container1 {
+  width: 70vw;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.trash-icon {
+  width: 40px;
+  cursor: pointer;
+}
+
+tr {
+  cursor: pointer;
+}
